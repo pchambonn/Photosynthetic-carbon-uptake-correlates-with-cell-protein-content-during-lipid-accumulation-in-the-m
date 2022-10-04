@@ -1,6 +1,6 @@
 o2cell_light_local_interpol <- function(n,I_software, OD_880){
   
-  source('C:/Users/marti/Desktop/CEA/Code/R/General functions/Mathematical/pc_interp2.R', echo=TRUE)
+  source('pc_interp2.R', echo=TRUE)
 
   # This function aims at delivering a 3D matrix of light distribution in the O2 cell set up according
   # to the optical density of the algae solution tested and sofware controlled inicident light intensity.
