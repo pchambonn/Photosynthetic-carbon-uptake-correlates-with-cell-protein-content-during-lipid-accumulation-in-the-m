@@ -9,7 +9,7 @@ pc_interp2 <- function(x , y , z , nx , ny  ){
   
   # x: intial x coordinates (ordered values, dimension lx)
   # y: inital y coordinates (ordered values, dimension ly)
-  # z: know values of the surface to interpolate (dimension lx by ly) or ly by lx???? unclear
+  # z: know values of the surface to interpolate
   # nx: number of point by which to divide in between each known points of x
   # ny: number of point by which to divide in between each known points of y
   
@@ -17,7 +17,8 @@ pc_interp2 <- function(x , y , z , nx , ny  ){
   
   # x_interp: vector of interpolated data of x: nx - 1 values are created in between point x. The lenght of x_interp is (nx-1)*length(x) +1
   # y_interp: vector of interpolated data of y: ny - 1 values are created in between each points of y. The lenght of y_interp is (ny-1)*length(y) +1
-
+  # z_interp: vector of interpolated data of z on a mesh of x and y of length lx by ly
+  
   x_interp <- c(x[1])
   for (i in 1:(length(x) - 1)){
     x_interp <- c(x_interp ,  approx(x[i:(i+1)] , method = "linear" , n = nx + 1 )$y[-1])  
